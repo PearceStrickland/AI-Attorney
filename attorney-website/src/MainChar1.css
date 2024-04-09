@@ -1,0 +1,34 @@
+.game-screen {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 100px); /* Adjust the height as needed */
+    text-align: center;
+  }
+  
+  .game-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 80vh; /* Adjust based on your layout */
+    margin-bottom: 10px;
+  }
+  
+  .game-text {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    color: #333; /* Or any color you'd like */
+  }
+  
+  .next-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff; /* Or any color that fits your game's theme */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .next-button:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+  }

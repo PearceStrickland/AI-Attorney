@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './IntroScreen.css'; // Make sure to import the CSS file
+import './MainChar3.css'; // Make sure to import the CSS file
 import courtroomImage from './images/empty_courtroom.png';
 
-function IntroScreen() {
+function MainChar3() {
   const navigate = useNavigate();
 
   const goToNextScreen = () => {
@@ -19,4 +19,4 @@ function IntroScreen() {
   );
 }
 
-export default IntroScreen;
+export default MainChar3;
