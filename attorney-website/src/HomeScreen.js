@@ -1,7 +1,14 @@
 import React from 'react';
-import './App.css';
+import { useNavigate } from 'react-router-dom';
+import './HomeScreen.css';
 
 function HomeScreen() {
+  let navigate = useNavigate(); // Hook to get the navigate function
+
+  function handleProceed() {
+    navigate('/game'); // Use navigate function to change the route
+  }
+
   return (
     <div className="app">
       <div className="background-image"></div>
@@ -14,7 +21,7 @@ function HomeScreen() {
           <li>Instruction 4: Cross-examine witnesses and present your case persuasively.</li>
           <li>Instruction 5: Deliver a compelling closing argument to sway the jury.</li>
         </ul>
-        <button className="proceed-button">Proceed to the Game</button>
+        <button className="proceed-button" onClick={handleProceed}>Proceed to the Game</button>
       </div>
     </div>
   );
