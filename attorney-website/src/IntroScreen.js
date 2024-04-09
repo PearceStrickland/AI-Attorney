@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './GameScreen.css'; // Make sure to import the CSS file
 import courtroomImage from './images/empty_courtroom.png';
 
-function GameScreen() {
+function IntroScreen() {
   const navigate = useNavigate();
 
   const goToNextScreen = () => {
@@ -19,4 +19,4 @@ function GameScreen() {
   );
 }
 
-export default GameScreen;
+export default IntroScreen;
