@@ -1,22 +1,19 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomeScreen from './HomeScreen';
+import GameScreen from './GameScreen';
 import './App.css';
 
 function App() {
   return (
-    <div className="app">
-      <div className="background-image"></div>
-      <div className="content">
-        <h1>AI Attorney</h1>
-        <ul>
-          <li>Instruction 1: Read the case carefully and gather all relevant information.</li>
-          <li>Instruction 2: Analyze the evidence and identify key points to support your argument.</li>
-          <li>Instruction 3: Prepare your opening statement and anticipate counterarguments.</li>
-          <li>Instruction 4: Cross-examine witnesses and present your case persuasively.</li>
-          <li>Instruction 5: Deliver a compelling closing argument to sway the jury.</li>
-        </ul>
-        <button className="proceed-button">Proceed to the Game</button>
+    <Router>
+      <div className="app">
+        <Routes>
+          <Route path="/game" element={<GameScreen />} />
+          <Route path="/" element={<HomeScreen />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 
