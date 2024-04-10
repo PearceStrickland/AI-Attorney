@@ -25,24 +25,38 @@
   margin-bottom: 10px;
 }
 
-.judge-image {
-  max-width: 10%;
+/* Common styles for all character images */
+.character-image {
+  max-width: 20%;
   height: auto;
   margin-bottom: 10px;
-  position: absolute; /* Position the judge image absolutely */
-  top: 180px; /* Adjust the top position as needed */
-  left: 50%; /* Move the image to the horizontal center */
-  transform: translateX(-50%); /* Center the image horizontally */
+  position: absolute;
   z-index: 2;
+  transform: translateX(-50%);
+}
+
+/* Unique styles for positioning */
+.judge-image {
+  top: 80px;  /* Example top position for judge */
+  left: 750px;
 }
 
 .prosecutor-image {
-  max-width: 10%;
-  height: auto;
-  margin-bottom: 10px;
-  position: absolute; /* Position the judge image absolutely */
-  top: 180px; /* Adjust the top position as needed */
-  left: 50%; /* Move the image to the horizontal center */
-  transform: translateX(-50%); /* Center the image horizontally */
-  z-index: 2;
+  top: 100px;  /* Slightly different position for prosecutor */
+  left: 770px;
+}
+
+.attorney-image {
+  top: 100px;  /* Unique position for attorney */
+  left: 730px;
+}
+
+.school-image {
+  top: 100px;  /* Unique position for attorney */
+  left: 730px;
+}
+
+.college-image {
+  top: 100px;  /* Unique position for attorney */
+  left: 730px;
 }

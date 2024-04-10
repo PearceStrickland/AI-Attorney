@@ -9,7 +9,7 @@ const JudgeCourtroomScene = ({ entries, onSceneComplete }) => {
 
     return (
         <div className="game-background" onClick={handleClick} style={{ backgroundImage: `url(${courtroomImage})` }}>
-            <img src={currentPose} alt="Judge Pose" className="judge-image" />
+            <img src={currentPose} alt="Judge Pose" className="character-image judge-image" />
             <Typewriter 
                 text={currentText} 
                 speaker={"Judge"} 
