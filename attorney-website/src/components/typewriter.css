@@ -1,0 +1,35 @@
+.typewriter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start to match the left-aligned design */
+    justify-content: flex-start; /* Align the content to the top */
+    position: absolute; /* Position the container absolutely within a relatively positioned parent */
+    left: 49%; /* Center the container horizontally */
+    top: 86%; /* Adjust top as needed to elevate the block higher */
+    transform: translate(-50%, -50%); /* Adjust positioning to truly center the box */
+    width: 1000px;
+    padding-bottom: 20px; /* Padding to separate from bottom edge */
+}
+
+.typewriter-header {
+    background-color: #add8e6; /* Light blue background */
+    color: white; /* White text for the speaker */
+    font-family: 'Arial', sans-serif;
+    font-size: 18px; /* Smaller font size for the speaker */
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px 4px 0 0; /* Rounded corners on top only */
+    margin-bottom: -2px; /* Negative margin to overlap the text box */
+}
+
+.typewriter-text {
+    background-color: #000080; /* Darker blue background */
+    color: white; /* White text color */
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-wrap;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 0 8px 8px 8px; /* Rounded corners everywhere but top left */
+    width: 100%; /* Match the width of the header when text is long enough */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}

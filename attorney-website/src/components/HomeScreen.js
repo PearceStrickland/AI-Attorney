@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './HomeScreen.css';
+import './GameScreen.css';
 
 function HomeScreen() {
   let navigate = useNavigate(); // Hook to get the navigate function
@@ -10,7 +11,7 @@ function HomeScreen() {
   }
 
   return (
-    <div className="app">
+    <div className="game-screen">
       <div className="background-image"></div>
       <div className="content">
         <h1>AI Attorney</h1>
