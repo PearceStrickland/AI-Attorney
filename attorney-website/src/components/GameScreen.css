@@ -116,3 +116,25 @@
   top: 100px;  /* Unique position for attorney */
   left: 730px;
 }
+
+.game-end-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  color: #333;
+  text-align: center;
+}
+
+.game-end-screen h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.game-end-screen p {
+  font-size: 1.5em;
+  margin-top: 0;
+  color: #555;
+}
