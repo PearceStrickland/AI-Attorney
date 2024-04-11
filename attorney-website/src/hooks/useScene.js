@@ -1,4 +1,3 @@
-// hooks/useScene.js
 import { useState } from 'react';
 
 function useScene(entries, onSceneComplete) {
@@ -7,16 +6,17 @@ function useScene(entries, onSceneComplete) {
 
     const handleClick = () => {
         if (!typingComplete) return;
-        if (currentEntryIndex >= entries.length - 1) {
-            onSceneComplete();
-            return;
-        }
 
+        // Handle linear dialogues
+        if (currentEntryIndex < entries.length - 1) {
+            setCurrentEntryIndex(currentEntryIndex + 1);
+        } else {
+            onSceneComplete();
+        }
         setTypingComplete(false);
-        setCurrentEntryIndex(currentEntryIndex + 1);
     };
 
-    return { currentEntryIndex, handleClick, setTypingComplete };
+    return { currentEntryIndex, handleClick, setTypingComplete, typingComplete };
 }
 
 export default useScene;

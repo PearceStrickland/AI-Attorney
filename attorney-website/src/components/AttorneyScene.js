@@ -1,10 +1,10 @@
 import React from 'react';
-import newScene from '../hooks/newScene.js';
+import useScene from '../hooks/useScene.js';
 import Typewriter from './typewriter.js';
 import attorneyImage from '../images/Attorney.png';
 
-const AttorneyScene = ({ entries, author, onSceneComplete }) => {
-    const { currentEntryIndex, handleClick, setTypingComplete } = newScene(entries, onSceneComplete);
+const AttorneyScene = ({ entries, onSceneComplete }) => {
+    const { currentEntryIndex, handleClick, setTypingComplete } = useScene(entries, onSceneComplete);
     const { 0: currentPose, 1: currentText } = entries[currentEntryIndex];
 
     return (
@@ -12,7 +12,7 @@ const AttorneyScene = ({ entries, author, onSceneComplete }) => {
             <img src={currentPose} alt="Pose" className="character-image attorney-image" />
             <Typewriter 
                 text={currentText} 
-                speaker={author} 
+                speaker={"You"} 
                 onComplete={() => setTypingComplete(true)}
             />
         </div>

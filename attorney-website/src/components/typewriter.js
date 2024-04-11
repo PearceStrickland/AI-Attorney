@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './typewriter.css';
 import typewriterSound from '../audio/typewriter-clack.wav';
 
-function Typewriter({ text, speed = 100, speaker, onComplete }) {
+function Typewriter({ text, speed = 30, speaker, onComplete }) {
     const [displayedText, setDisplayedText] = useState('');
     const index = useRef(0);
     const intervalId = useRef(null);

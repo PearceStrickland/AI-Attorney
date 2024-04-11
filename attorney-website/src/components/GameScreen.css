@@ -17,6 +17,9 @@
   height: 100%;
   background-size: cover;
   background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Adjust content distribution */
 }
 
 .game-image {
@@ -25,9 +28,51 @@
   margin-bottom: 10px;
 }
 
+.scene-header {
+  position: absolute;
+  top: 10px;        /* Adjust as needed to fit your layout */
+  left: 10px;       /* Adjust as needed to fit your layout */
+  color: #ffffff;   /* Text color */
+  font-size: 20px;  /* Text size */
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  padding: 10px 20px;
+  border-radius: 5px;  /* Rounded corners */
+  z-index: 1000;       /* Ensures it sits above other elements */
+}
+
+.question-container {
+  position: absolute;
+  bottom: 20px; /* Positioned near the bottom of the screen */
+  left: 50%;
+  transform: translateX(-50%); /* Centers the container */
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: center;
+  justify-content: center;
+  width: auto; /* Only as wide as it needs to be */
+}
+
+.question-button {
+  padding: 12px 24px;
+  margin: 5px;
+  background-color: #007bff; /* Blue background */
+  color: #ffffff; /* White text */
+  border: 1px solid #0056b3; /* Darker blue border */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.question-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+}
+
 /* Common styles for all character images */
 .character-image {
-  max-width: 20%;
   height: auto;
   margin-bottom: 10px;
   position: absolute;
@@ -37,26 +82,37 @@
 
 /* Unique styles for positioning */
 .judge-image {
-  top: 80px;  /* Example top position for judge */
-  left: 750px;
+  max-width: 12%;
+  top: 100px;  /* Example top position for judge */
+  left: 720px;
 }
 
 .prosecutor-image {
-  top: 100px;  /* Slightly different position for prosecutor */
-  left: 770px;
+  max-width: 20%;
+  top: 60px;  /* Slightly different position for prosecutor */
+  left: 720px;
 }
 
 .attorney-image {
-  top: 100px;  /* Unique position for attorney */
-  left: 730px;
+  max-width: 20%;
+  top: 60px;  /* Unique position for attorney */
+  left: 710px;
 }
 
 .school-image {
+  max-width: 30%;
   top: 100px;  /* Unique position for attorney */
   left: 730px;
 }
 
 .college-image {
+  max-width: 20%;
+  top: 200;  /* Unique position for attorney */
+  left: 1130px;
+}
+
+.witness-image {
+  max-width: 12%;
   top: 100px;  /* Unique position for attorney */
   left: 730px;
 }
