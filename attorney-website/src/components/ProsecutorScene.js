@@ -10,7 +10,7 @@ const ProsecutorScene = ({ entries, onSceneComplete }) => {
     return (
         <div className="game-background" onClick={handleClick} style={{ backgroundImage: `url(${prosecutorImage})` }}>
             <img src={currentPose} alt="Pose" className="character-image prosecutor-image" />
-            <Typewriter 
+            <Typewriter
                 text={currentText} 
                 speaker={"Opposing Attorney"} 
                 onComplete={() => setTypingComplete(true)}

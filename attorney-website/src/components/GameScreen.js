@@ -33,23 +33,26 @@ import witness_aiexpert from '../images/witness_aiexpert.png';
 function GameScreen() {
     const entriesList = [
         // Opening scene
-        { interactionType: 'linear', scene: 'judge', header: "Opening Deliberations", dialogues: [[judge_neutral, "W e are gathered today to deliberate on a matter that bridges technology and humanity—how University of Georgia's AI-driven admission process has impacted the futures of potential students. Counselor, what is at the heart of your client's grievance?"]], author: 'Judge'},
-        { interactionType: 'linear', scene: 'attorney', dialogues: [[attorney_crossarms, "Y our Honor, my client, Erica, stands before you as the human face of a wider systemic issue. This is not just about a rejection letter; it's about the opaque algorithms that are shaping our youth's future without accountability. We are here to challenge the reliance on a flawed system, a so-called objective AI, which in its cold calculation, failed to recognize the caliber of a deserving student."]], author: "You"},
-        { interactionType: 'linear', scene: 'prosecutor', dialogues: [[prosecutor_angry, "W ith all due respect, Your Honor, the allegations leveled against University of Georgia's admission process are unfounded. The AI in question does not tire, does not discriminate, does not harbor prejudices. It is a tool—a sophisticated one—that enables us to pro[cess an overwhelming number of applications equitably."]], author: "Opposing Attorney"},
-        { interactionType: 'linear', scene: 'judge', dialogues: [[judge_neutral, "W e proceed with clear eyes and open minds. This court is a bastion for truth and justice, and we shall endeavor to uphold these tenets as we examine the role of AI in shaping the destiny of our nation’s scholars."]], author: "Judge"},
-        
+        { interactionType: 'linear', scene: 'judge', header: "Opening Deliberations", dialogues: [[judge_neutral, "W e are gathered today to deliberate on how University of Georgia's AI-driven admission process has impacted the futures of potential students. Counselor, what is at the heart of your client's grievance?"]], author: 'Judge'},
+        { interactionType: 'linear', scene: 'attorney', dialogues: [[attorney_crossarms, "Y our Honor, my client, Erica, has been rejected by UGA. However, this is not just about a rejection letter; it's about the flawed algorithms behind the decision-making process that are shaping our youth's future."]], author: "You"},
+        { interactionType: 'linear', scene: 'prosecutor', dialogues: [[prosecutor_angry, "W ith all due respect, Your Honor, the allegations leveled against University of Georgia's admission process are unfounded. The AI in question does not tire, does not discriminate, does not harbor prejudices."]], author: "Opposing Attorney"},
+        { interactionType: 'linear', scene: 'judge', dialogues: [[judge_neutral, "T hank you both. Let us proceed with the testimonies and evidence to determine the validity of these claims."]], author: "Judge"},
+
         // Student Scene
         { interactionType: 'linear', scene: 'school', header: "Scene 1: High School", dialogues: [[student_happy, "G ood morning, Erica. Let's go over your case regarding your college admission. What exactly happened when you got the response from the University of Georgia?"]], author: "You"},
-        { interactionType: 'linear', scene: 'school', dialogues: [[student_sad, " Good morning. Well, I received this email out of the blue. It said, 'After careful evaluation by our advanced AI system, we regret to inform you that you have not been selected for admission.' I was shocked. My application was strong in every conventional sense."]], author: "Erica"},
+        { interactionType: 'linear', scene: 'school', dialogues: [[student_happy, " Good morning. Well, I received this email out of the blue. It said, 'After careful evaluation by our advanced AI system, we regret to inform you that you have not been selected for admission.' I was shocked. My application was strong in every conventional sense."]], author: "Erica"},
+        { interactionType: 'linear', scene: 'school', dialogues: [[student_sad, " I was shocked. My application was strong in every conventional sense."]], author: "Erica"},
+        { interactionType: 'linear', scene: 'school', dialogues: [[student_sad, " I thought my application was really strong."]], author: "Erica"},
+
         { interactionType: 'interactive', scene: 'school', dialogues: [
-            { pose: student_happy, text: "Can you detail the strengths of your application? Perhaps there’s something the AI missed?", response: "C ertainly. I had a 4.0 GPA, a perfect SAT score, and I’ve been involved in numerous extracurricular activities, including leading a community service initiative. It doesn’t make sense.", author: "Erica" },
-            { pose: student_happy, text: "Have you contacted the college for a more detailed explanation of the AI's decision?", response: "Y es, I did. But they only responded with generic answers about the high level of competition and the efficiency of their AI system. No specifics were given.", author: "Erica" },
-            { pose: student_happy, text: "Is there any particular aspect of your application that you think the AI might have misunderstood or overlooked?", response: "I  think so. My essay discussed overcoming personal challenges that affected my early high school grades. Maybe the AI just looked at the numbers and not the context behind them.", author: "Erica" },
+            { pose: student_neutral, text: "Can you tell me about the strengths of your application? Is it possible there’s something the AI missed?", response: "C ertainly. I had a 4.0 GPA, a perfect SAT score, and I’ve been involved in numerous extracurricular activities, including leading a community service initiative. It doesn’t make sense.", author: "Erica" },
+            { pose: student_sad, text: "Have you contacted the college for a more detailed explanation of the AI's decision?", response: "Y es, I did. But they only responded with generic answers about the high level of competition and the efficiency of their AI system. No specifics were given.", author: "Erica" },
+            { pose: student_neutral, text: "Is there any particular aspect of your application that you think the AI might have misunderstood or overlooked?", response: "I  think so. My essay discussed overcoming personal challenges that affected my early high school grades.", author: "Erica" },
         ]},
         
         // College Scene
         { interactionType: 'linear', scene: 'college', header: "Scene 2: UGA", dialogues: [[dean_angry, "I 'm here to discuss the admission process, particularly how you use AI to evaluate applicants."]], author: "You"},
-        { interactionType: 'linear', scene: 'college', dialogues: [[dean_neutral, " The AI helps us process applications more efficiently. It’s unbiased and accurate."]], author: "The Dean"},
+        { interactionType: 'linear', scene: 'college', dialogues: [[dean_neutral, " I understand, the AI helps us process applications more efficiently. It’s unbiased and accurate."]], author: "The Dean"},
         { interactionType: 'interactive', scene: 'college', dialogues: [
             { pose: dean_neutral, text: "How does the AI system work?", response: "I t analyzes academic records, test scores, and extracurricular activities to predict the applicant's success at our college.", author: "Dean" },
             { pose: dean_confusion, text: "Can the AI system make mistakes?", response: "W ell, it's a machine. It operates within the parameters we set, but I suppose no system is perfect.", author: "Dean" },
@@ -57,15 +60,18 @@ function GameScreen() {
         ]},
 
         // Courtroom Scene
-        { interactionType: 'linear', scene: 'attorney', header: "Scene 3: The Courtroom", dialogues: [[attorney_thinking, "Y our Honor, this is not just about a rejection letter; it's about the opaque algorithms that are shaping our youth's future without accountability. We are here to challenge the reliance on a flawed system, a so-called objective AI, which in its cold calculation, failed to recognize the caliber of a deserving student."]], author: "You"},
+        { interactionType: 'linear', scene: 'attorney', header: "Scene 3: The Courtroom", dialogues: [[attorney_thinking, "Y our Honor, this is not just about a rejection letter; it's about the algorithms that are shaping our youth's future without accountability."]], author: "You"},
         { interactionType: 'linear', scene: 'prosecutor', dialogues: [[prosecutor_neutral, "W ith all due respect, Your Honor, the allegations leveled against University of Georgia's admission process are unfounded. The AI in question does not tire, does not discriminate, does not harbor prejudices. It is a tool—a sophisticated one—that enables us to process an overwhelming number of applications equitably."]], author: "Opposing Attorney"},
-        { interactionType: 'linear', scene: 'attorney', dialogues: [[attorney_talking, "M ay I approach the bench with Exhibit A? This is Erica’s application, demonstrating not only fulfillment but the exceeding of the college's stated academic and extracurricular standards. And yet, the AI summarily dismissed it. How can such a decision be deemed equitable?"]], author: "You"},
-        { interactionType: 'linear', scene: 'prosecutor', dialogues: [[prosecutor_neutral, "Y our Honor, I would like to point out that merit is multifaceted in the context of college admissions. The AI is programmed to evaluate a myriad of factors, including those that go beyond grades and scores."]], author: "Opposing Attorney"},
+        { interactionType: 'linear', scene: 'attorney', dialogues: [[attorney_talking, "M ay I approach the bench with Exhibit A? This is Erica’s application, it exceeds the college's stated academic and extracurricular standards. And yet, the AI dismissed it."]], author: "You"},
+        { interactionType: 'linear', scene: 'prosecutor', dialogues: [[prosecutor_neutral, "Y our Honor, I would like to point out that merit is multifaceted. The AI is programmed to evaluate many factors, including those that go beyond grades and scores."]], author: "Opposing Attorney"},
         { interactionType: 'linear', scene: 'judge', dialogues: [[judge_angry, "I  acknowledge the exhibits presented. Let us not forget, however, that the human experience cannot be quantified in its entirety. Counselor, you mentioned an expert analysis?"]], author: "Judge"},
-        { interactionType: 'linear', scene: 'attorney', dialogues: [[attorney_happy, "P recisely, Your Honor. If I may direct the court's attention to Exhibit B. This report, authored by a leading expert in artificial intelligence, underscores the limitations of AI in interpreting the nuances and context of an applicant's personal journey. The report suggests that AI, as it stands, may not be equipped to fully understand or evaluate the unique challenges and achievements of each applicant."]], author: "You"},
-        { interactionType: 'linear', scene: 'prosecutor', dialogues: [[prosecutor_sweaty, "W e contest the notion that the AI has overlooked anything of significance. The system is designed to identify the candidates most likely to thrive at University of Georgia, based on an extensive array of indicators."]], author: "Opposing Attorney"},
-        { interactionType: 'linear', scene: 'attorney', dialogues: [[attorney_crossarms, "M ay I continue with Exhibit C, Your Honor? Here we present a statistical analysis revealing a concerning pattern within the AI’s decisions. Certain applicant profiles are consistently undervalued. This points to a systemic bias that the college has failed to address, calling into question the fairness of the entire admission process."]], author: "You"},
-        { interactionType: 'linear', scene: 'judge', dialogues: [[judge_angry, "T hese points paint a troubling picture indeed—one where we must consider if efficiency has been prioritized over equity. We must question whether a machine can truly grasp the depth of human potential. The court will thoroughly examine these arguments and the evidence provided before us. Rest assured, the decision will reflect our commitment to justice and the fair treatment of all individuals under the law."]], author: "Judge"},
+        { interactionType: 'linear', scene: 'attorney', dialogues: [[attorney_happy, "P recisely, Your Honor. If I may direct the court's attention to Exhibit B. This report, authored by a leading expert in artificial intelligence, underscores the limitations of AI in interpreting the nuances and context of an applicant's personal journey."]], author: "You"},
+        { interactionType: 'linear', scene: 'attorney', dialogues: [[attorney_talking, " The report suggests that AI, as it stands, may not be equipped to fully understand or evaluate the unique challenges and achievements of each applicant."]], author: "You"},
+        { interactionType: 'linear', scene: 'prosecutor', dialogues: [[prosecutor_sweaty, "W e contest the notion that the AI has overlooked anything of significance."]], author: "Opposing Attorney"},
+        { interactionType: 'linear', scene: 'attorney', dialogues: [[attorney_crossarms, "M ay I continue with Exhibit C, Your Honor?"]], author: "You"},
+        { interactionType: 'linear', scene: 'judge', dialogues: [[judge_neutral, "Y es, proceed"]], author: "Judge"},
+        { interactionType: 'linear', scene: 'attorney', dialogues: [[attorney_crossarms, "H ere we present a statistical analysis revealing a concerning pattern within the AI’s decisions. Certain applicant profiles are consistently undervalued."]], author: "You"},
+        { interactionType: 'linear', scene: 'judge', dialogues: [[judge_angry, "T he court will thoroughly examine these arguments and the evidence provided before us."]], author: "Judge"},
 
         // Testimonies
         { interactionType: 'linear', scene: 'attorney', header: "Scene 4: Testimonies", dialogues: [[attorney_talking, "W e now call Dr. Jane Smith, an expert in AI and machine learning, to the stand."]], author: "You"},
@@ -84,18 +90,48 @@ function GameScreen() {
         { interactionType: 'linear', scene: 'witness', dialogues: [[student_sad, "M aybe, but friends with similar or even lower qualifications got in. It just doesn’t add up. I feel like the AI didn’t see the real me."]], author: "Erica"},
 
         // Closing Arguments
-        { interactionType: 'linear', scene: 'attorney', header: "Scene 5: Closing Arguments", dialogues: [[attorney_crossarms, "Y our Honor, we’ve shown that the AI system at University of Georgia is flawed. It misses the essence of what makes each applicant unique and capable. We must ensure fairness and transparency in such critical decisions affecting young lives."]], author: "You"},
-        { interactionType: 'linear', scene: 'prosecutor', dialogues: [[prosecutor_angry, "Y our Honor, while no system is perfect, the AI has enabled the University of Georgia to handle an ever-growing number of applicants. It's about balancing efficiency with personal attention, and we believe the AI achieves this balance."]], author: "Opposing Attorney"},
-        { interactionType: 'linear', scene: 'judge', dialogues: [[judge_neutral, "T hank you both. The impact of AI in education is profound and warrants careful consideration. We must balance technological advancements with the need for human judgment and compassion."]], author: "Judge"},
-        { interactionType: 'linear', scene: 'judge', dialogues: [[judge_neutral, " After careful consideration, I have deemed that the University of Georgia has employed a biased system to review candidates, and a system they themselves do not truly understand. UGA will reconsider Erica's application into their college through a manual process, and I deem Erica, NOT GUILTY."]], author: "Judge"},
 
-        { scene: 'end'}
+        // Decision Time - 36
+        { interactionType: 'interactive', scene: 'attorney', dialogues: [
+            { pose: attorney_triumphant, text: "AI cannot capture what makes an applicant unique on a personal level.", header: "Scene 5: Closing Arguments", response: "Y our Honor, we’ve shown that the AI system at University of Georgia is flawed. It misses the essence of what makes each applicant unique and capable. We must ensure fairness and transparency in such critical decisions affecting young lives.", author: "You" },
+            { pose: attorney_crossarms, text: "UGA sucks so its AI sucks.", response: "W ell, UGA as a college, sucks. By proxy, its AI sucks and Erica should be admitted.", author: "You" },
+            { pose: attorney_crossarms, text: "The AI was trained on biased data!", response: "T here is a high chance that this AI was trained on biased or skewed data, leading to flawed decision-making.", author: "You" },
+        ]},
+
+        // Correct Decision - 37
+        { interactionType: 'linear', scene: 'prosecutor', dialogues: [[prosecutor_angry, "Y our Honor, while no system is perfect, the AI has enabled the University of Georgia to handle an ever-growing number of applicants."]], author: "Opposing Attorney"},
+        { interactionType: 'linear', scene: 'judge', dialogues: [[judge_neutral, "T hank you both. The impact of AI in education is profound and warrants careful consideration."]], author: "Judge"},
+        { interactionType: 'linear', scene: 'judge', dialogues: [[judge_neutral, " After careful consideration, I have deemed that the University of Georgia has employed a biased system to review candidates, and a system they themselves do not truly understand. UGA will reconsider Erica's application into their college through a manual process, and I deem Erica, NOT GUILTY."]], author: "Judge"},
+        //add "NOT GUILGY " animation here
+        { scene: 'end'},
+
+        // 1st Incorrect Decision - 41
+        { interactionType: 'linear', scene: 'prosecutor', dialogues: [[prosecutor_angry, "H OW IS THIS RELEVANT!"]], author: "Opposing Attorney"},
+        { interactionType: 'linear', scene: 'judge', dialogues: [[judge_enraged, "Y es, on what grounds are you making these foolish assumptions."]], author: "Judge"},
+        { interactionType: 'linear', scene: 'attorney', dialogues: [[attorney_thinking, "Uhhhhhhhhhh"]], author: "You"},
+
+        // 2nd Incorrect Decision - 44
+        { interactionType: 'linear', scene: 'prosecutor', dialogues: [[prosecutor_angry, "T here is no proof on how flawed the training process is!"]], author: "Opposing Attorney"},
+        { interactionType: 'linear', scene: 'judge', dialogues: [[judge_angry, "A greed, do you have any evidence to back this up?"]], author: "Judge"},
+        { interactionType: 'linear', scene: 'attorney', dialogues: [[attorney_talking, "W ell...there is no proof on the contrary...I think"]], author: "You"},
     ];
 
     const [entryIndex, setEntryIndex] = useState(0);
 
-    const handleSceneComplete = () => {
-        setEntryIndex(entryIndex + 1);
+    const handleSceneComplete = (index) => {
+        if (index === 0) {
+            setEntryIndex(entryIndex + 1);
+        } else if (index === 1) {
+            setEntryIndex(41);
+        } else if (index === 2) {
+            setEntryIndex(44);
+        } else if (entryIndex === 43) {
+            setEntryIndex(36);
+        } else if (entryIndex === 46) {
+            setEntryIndex(36);
+        } else {
+            setEntryIndex(entryIndex + 1);
+        }
     };
 
     const renderScene = () => {
@@ -104,7 +140,7 @@ function GameScreen() {
             case 'judge':
                 return <JudgeCourtroomScene entries={currentEntry.dialogues} onSceneComplete={handleSceneComplete} header={currentEntry.header} />;
             case 'attorney':
-                return <AttorneyScene entries={currentEntry.dialogues} onSceneComplete={handleSceneComplete} header={currentEntry.header} />;
+                return <AttorneyScene entries={currentEntry.dialogues} interactionType={currentEntry.interactionType} onSceneComplete={handleSceneComplete} header={currentEntry.header} />;
             case 'prosecutor':
                 return <ProsecutorScene entries={currentEntry.dialogues} onSceneComplete={handleSceneComplete} />;
             case 'school':
