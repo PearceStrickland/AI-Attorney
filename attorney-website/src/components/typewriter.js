@@ -1,12 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './typewriter.css';
-import typewriterSound from '../audio/typewriter-clack.wav';
+import typewriterSound from '../audio/blip.wav';
 
-function Typewriter({ text, speed = 30, speaker, onComplete }) {
+function Typewriter({ text, speed = 30, speaker, onComplete, volume=0.3 }) {
     const [displayedText, setDisplayedText] = useState('');
     const index = useRef(0);
     const intervalId = useRef(null);
     const audioRef = useRef(new Audio(typewriterSound));
+
+    useEffect(() => {
+        audioRef.current.volume = volume; // Set the volume
+    }, [volume]);
 
     // Play audio for typewriter effect
     const playSound = () => {

@@ -19,7 +19,7 @@ function HomeScreen() {
           <li>Instruction 1: Read the case carefully and gather all relevant information.</li>
           <li>Instruction 2: Analyze the evidence and identify key points to support your argument.</li>
           <li>Instruction 3: Cross-examine witnesses and present your case persuasively.</li>
-          <li>Instruction 4: Click on the screen to continue the story.</li>
+          <li>Instruction 4: CLICK ON THE SCREEN to continue the story after the character has finished he/she has said.</li>
         </ul>
         <button className="proceed-button" onClick={handleProceed}>Proceed to the Game</button>
       </div>

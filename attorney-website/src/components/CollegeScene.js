@@ -1,13 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import useScene from '../hooks/useScene.js';
 import Typewriter from './typewriter.js';
 import collegeImage from '../images/College.png';
 
-const CollegeScene = ({ entries, author, interactionType, onSceneComplete, header }) => {
+const CollegeScene = ({ entries, music = null, author, interactionType, onSceneComplete, header }) => {
     const { currentEntryIndex, handleClick, setTypingComplete, typingComplete } = useScene(entries, onSceneComplete);
     const [showResponse, setShowResponse] = useState(false);
     const [answeredQuestions, setAnsweredQuestions] = useState([]);
     const [selectedQuestionIndex, setSelectedQuestionIndex] = useState(null);
+    const audioRef = useRef(new Audio(music));
+
+    useEffect(() => {
+        const playSound = () => {
+            audioRef.current.currentTime = 0;
+            audioRef.current.play().catch(e => console.error("Failed to play audio:", e));
+        };
+
+        playSound();
+        return;
+    }, [music]);
 
     useEffect(() => {
         if (interactionType === 'interactive' && answeredQuestions.length === entries.length && !showResponse) {

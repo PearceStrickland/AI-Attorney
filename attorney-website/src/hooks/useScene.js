@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 function useScene(entries, onSceneComplete) {
     const [currentEntryIndex, setCurrentEntryIndex] = useState(0);
-    const [typingComplete, setTypingComplete] = useState(true);
+    const [typingComplete, setTypingComplete] = useState(false);
 
     const handleClick = () => {
         if (!typingComplete) return;
