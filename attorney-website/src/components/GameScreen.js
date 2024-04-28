@@ -48,7 +48,7 @@ function GameScreen() {
 
         // Student Scene
         { interactionType: 'linear', music: witness_interrogation, scene: 'school', header: "Scene 1: High School", dialogues: [[student_happy, "G ood morning, Erica. Let's go over your case regarding your college admission. What exactly happened when you got the response from the University of Georgia?"]], author: "You"},
-        { interactionType: 'linear', music: witness_interrogation, scene: 'school', dialogues: [[student_happy, " Good morning. Well, I received this email out of the blue. It said, 'After careful evaluation by our advanced AI system, we regret to inform you that you have not been selected for admission.' I was shocked. My application was strong in every conventional sense."]], author: "Erica"},
+        { interactionType: 'linear', music: witness_interrogation, scene: 'school', dialogues: [[student_happy, " Good morning. Well, I received this email out of the blue. It said, 'After careful evaluation by our advanced AI system, we regret to inform you that you have not been selected for admission.'"]], author: "Erica"},
         { interactionType: 'linear', music: witness_interrogation, scene: 'school', dialogues: [[student_sad, " I was shocked. My application was strong in every conventional sense."]], author: "Erica"},
         { interactionType: 'linear', music: witness_interrogation, scene: 'school', dialogues: [[student_sad, " It sucks, UGA was my dream school."]], author: "Erica"},
 
